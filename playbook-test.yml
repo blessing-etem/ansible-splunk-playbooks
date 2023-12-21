@@ -1,0 +1,9 @@
+--- 
+- name: test playbook
+  hosts: searchheads
+  become: yes
+
+  task:
+    - name: perform ping 
+      ansible.builtin.ping: 
+      
