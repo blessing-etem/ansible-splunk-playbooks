@@ -1,0 +1,13 @@
+---
+- name: copy clustermanager configuation
+  hosts: clustermanager
+  become: yes
+
+  tasks:
+    - name: clustermanager configuration addon to etc/apps 
+      ansible.builtin.copy:
+        src: /home/ansible/ansible-splunk-playbooks/clustermanager
+        dest: /opt/splunk/etc/apps
+        owner: splunk_user
+        group: splunk_user
+        mode: '0644'
